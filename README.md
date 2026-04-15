@@ -4,6 +4,7 @@
 This macro (roomclean.js) was developed as a Proof of Concept (PoC) for a customer inquiring about showing a visual image with cleaning instructions post meeting.  
 
 ### Example Image
+I used Gemini to create this visual with some guidelines around tidying up in a law firm environment
 [![Example Zone Visual](/roomclean2.png)](#)
 
 ### The Details
