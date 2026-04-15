@@ -1,11 +1,13 @@
 //This Macro was developed by Tyler Ronsman, Customer Success Engineer at Cisco, tronsman@cisco.com
+//Version 1.1
+//More details at https://github.com/trons-cisco/roomclean
 
 import xapi from 'xapi';
 
 //This is where you set the image you would like to display post meeting as well as the duration of said image to be seen
-const CLEAN_IMAGE_URL = 'https://github.com/trons-cisco/roomclean/blob/main/roomclean2.png?raw=true';
+const CLEAN_IMAGE_URL = 'https://github.com/trons-cisco/roomclean/blob/main/roomclean2.png?raw=true';  //This example image is hosted on this github repo
 const DISPLAY_DURATION = 120000; // 2 minutes in milliseconds
-const WEBEX_DELAY_MS = 1000;     // 3-second delay before showing modal for Webex
+const WEBEX_DELAY_MS = 1000;     // 1-second delay before showing modal for Webex
 
 //State trackers to ensure we only trigger the modal when an active call actually ends
 let isMtrInCall = false;
