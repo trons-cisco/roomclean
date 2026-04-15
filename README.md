@@ -7,3 +7,5 @@ In the Cisco RoomOS experience:
 
 In the Microsoft Teams Rooms experience on Cisco Devices
 - the macro triggers upon disconnecting from a Teams Meeting, Webex meeting, Webex video call, Zoom CRC/SIP and SIP call
+
+Note: webview.display does not work if there is an active content share when disconnecting from a meeting as the content share will take precedence.  You would see this more on Desk devices, but could potentially be fixed if you add a delay to the webview.display command trigger.
