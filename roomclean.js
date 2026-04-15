@@ -2,12 +2,12 @@
 
 import xapi from 'xapi';
 
-//this is where you set the image you would like to display post meeting as well as the duration of said image to be seen
+//This is where you set the image you would like to display post meeting as well as the duration of said image to be seen
 const CLEAN_IMAGE_URL = 'https://github.com/trons-cisco/roomclean/blob/main/roomclean2.png?raw=true';
 const DISPLAY_DURATION = 120000; // 2 minutes in milliseconds
-const WEBEX_DELAY_MS = 3000;     // 3-second delay before showing modal for Webex
+const WEBEX_DELAY_MS = 1000;     // 3-second delay before showing modal for Webex
 
-// State trackers to ensure we only trigger the modal when an active call actually ends
+//State trackers to ensure we only trigger the modal when an active call actually ends
 let isMtrInCall = false;
 let isNativeInCall = false;
 
@@ -16,12 +16,12 @@ function showCleanupReminder() {
   console.log('Meeting ended. Displaying cleanup reminder for 2 minutes.');
   
   // Show the image
-  //more info https://roomos.cisco.com/xapi/Command.UserInterface.WebView.Display
+  // More info https://roomos.cisco.com/xapi/Command.UserInterface.WebView.Display
   xapi.command('UserInterface.WebView.Display', {
     Url: CLEAN_IMAGE_URL,
-    Target: 'OSD', //OSD, Controller, PWA, RoomScheduler
+    Target: 'OSD', // options: OSD, Controller, PWA, RoomScheduler
     Title: 'Room Cleanup Reminder',
-    Mode: 'Modal' //Fullscreen or Modal
+    Mode: 'Modal' // options: Fullscreen or Modal
   });
 
   // Auto-clear after 2 minutes
@@ -56,7 +56,7 @@ xapi.Status.Call.Status.on((value) => {
         isNativeInCall = false;
         console.log(`Webex Meeting ended. Waiting ${WEBEX_DELAY_MS / 1000} seconds before showing modal.`);
         
-        // Triggers after a 3-second delay for Webex
+        // Triggers after a 1-second delay for Webex
         setTimeout(() => {
             showCleanupReminder();
         }, WEBEX_DELAY_MS);
