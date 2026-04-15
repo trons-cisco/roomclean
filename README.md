@@ -9,5 +9,5 @@ In the Microsoft Teams Rooms experience on Cisco Devices
 - the macro triggers upon disconnecting from a Teams Meeting, Webex meeting, Webex video call, Zoom CRC/SIP and SIP call
 
 Version History
-1.0 - issue with Desk device displaying the webview as it was returning to an active content share
-1.1 - add in a delay to accomodate for returning to active content upon meeting disconnect
+- 1.0: issue with Desk device displaying the webview as it was returning to an active content share
+- 1.1: add in a delay to accomodate for returning to active content upon meeting disconnect, this version addes delay for WebexNative only, will test on MTR or add checks for "device type"
