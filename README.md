@@ -3,7 +3,7 @@ This macro (roomclean.js) was developed as a Proof of Concept (PoC) for a custom
 The macro is built to monitor for meeting "disconnect" events, once triggered it will run the "webview display" command to present a hosted image (roomclean2.jpg) for 2 minutes, at the end of the 2 minute timer, it will run "webview clear".
 
 In the Cisco RoomOS experience:
-- The macro triggers upon disconnecting from Webex meeting, Webex video call, VIMT/CVI, Zoom CRC/SIP and SIP call
+- The macro triggers upon disconnecting from a Webex meeting, Webex video call, VIMT/CVI, Zoom CRC/SIP and SIP call
 
 In the Microsoft Teams Rooms experience on Cisco Devices
 - the macro triggers upon disconnecting from a Teams Meeting, Webex meeting, Webex video call, Zoom CRC/SIP and SIP call
