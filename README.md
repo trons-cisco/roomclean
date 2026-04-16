@@ -4,8 +4,9 @@
 This macro (roomclean.js) was developed as a Proof of Concept (PoC) for a customer inquiring about showing a visual image with cleaning instructions post meeting.  
 
 ### Example Image
-I used Gemini to create this visual with some guidelines around tidying up in a law firm environment
-[![Example Zone Visual](/roomclean2.png)](#)
+Gemini was used to create this visual.
+[![Example Zone Visual](/roomclean3.png)](#)
+*Two other images in this repo were also created using Gemini.*
 
 ### The Details
 The macro is built to monitor for meeting "disconnect" events, once triggered it will run the "webview display" command to present a hosted image (roomclean2.jpg) for 2 minutes, at the end of the 2 minute timer, it will run "webview clear".
