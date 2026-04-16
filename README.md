@@ -9,7 +9,7 @@ Gemini was used to create this visual.
 *Two other images in this repo were also created using Gemini.*
 
 ### The Details
-The macro is built to monitor for meeting "disconnect" events, once triggered it will run the "webview display" command to present a hosted image (roomclean2.jpg) for 2 minutes, at the end of the 2 minute timer, it will run "webview clear".
+The macro is built to monitor for meeting "disconnect" events, once triggered it will run the "webview display" command to present a hosted image (roomclean3.jpg) for 2 minutes, at the end of the 2 minute timer, it will run "webview clear".
 
 In the Cisco RoomOS experience:
 - The macro triggers upon disconnecting from a Webex meeting, Webex video call, VIMT/CVI, Zoom CRC/SIP and SIP call
