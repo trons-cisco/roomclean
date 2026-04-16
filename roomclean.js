@@ -5,7 +5,7 @@
 import xapi from 'xapi';
 
 //This is where you set the image you would like to display post meeting as well as the duration of said image to be seen
-const CLEAN_IMAGE_URL = 'https://github.com/trons-cisco/roomclean/blob/main/roomclean2.png?raw=true';  //This example image is hosted on this github repo
+const CLEAN_IMAGE_URL = 'https://github.com/trons-cisco/roomclean/blob/main/roomclean3.png?raw=true';  //This example image is hosted on this github repo
 const DISPLAY_DURATION = 120000; // 2 minutes in milliseconds
 const WEBEX_DELAY_MS = 1000;     // 1-second delay before showing modal for Webex
 
