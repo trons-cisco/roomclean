@@ -6,7 +6,7 @@ This macro (roomclean.js) was developed as a Proof of Concept (PoC) for a custom
 ### Example Image
 Gemini was used to create this visual.
 [![Example Zone Visual](/roomclean3.png)](#)
-*Two other images in this repo were also created using Gemini.*
+*Two other images in this repo were also created using Google Gemini.*
 
 ### The Details
 The macro is built to monitor for meeting "disconnect" events, once triggered it will run the "webview display" command to present a hosted image (roomclean3.jpg) for 2 minutes, at the end of the 2 minute timer, it will run "webview clear".
@@ -21,5 +21,5 @@ In the Microsoft Teams Rooms experience on Cisco Devices
 |  **Version** | **Type** | **Notes/Bugs/changes** |
 |-----|------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------|
 | 1.0 | Initial release | Issue with Desk device displaying the webview as it was returning to an active content share |
-| 1.1 | Delay Enhancement | Added in a delay to accomodate for returning to active content upon meeting disconnect, this version addes delay for WebexNative only, will test on MTR or add checks for "device type" |
-| x.x | Upcoming patch | Need to add in content check, if active then Delay 1 second for both RoomOS and MTR |
+| 1.1 | Patch/Enhancement | Added in a 1 second delay to accomodate for returning to active content upon meeting disconnect, this version addes delay for WebexNative only, will test on MTR or add checks for "device type" |
+| 1.2 | Patch/Enhancement | Added in a 6 second delay for joining Teams meeting in MTR mode, modified the Webex, VIMT/CVI and Zoom CRC/SIP delay to 3 seconds |
