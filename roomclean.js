@@ -1,5 +1,5 @@
 //This Macro was developed by Tyler Ronsman, Customer Success Engineer at Cisco, tronsman@cisco.com
-//Version 1.1
+//Version 1.2
 //More details at https://github.com/trons-cisco/roomclean
 
 import xapi from 'xapi';
@@ -7,7 +7,8 @@ import xapi from 'xapi';
 //This is where you set the image you would like to display post meeting as well as the duration of said image to be seen
 const CLEAN_IMAGE_URL = 'https://github.com/trons-cisco/roomclean/blob/main/roomclean3.png?raw=true';  //This example image is hosted on this github repo
 const DISPLAY_DURATION = 120000; // 2 minutes in milliseconds
-const WEBEX_DELAY_MS = 1000;     // 1-second delay before showing modal for Webex
+const WEBEX_DELAY_MS = 3000;     // 3-second delay before showing modal for Webex, VIMT/CVI and Zoom CRC/SIP
+const MTR_DELAY_MS = 6000;     // 6-second delay before showing modal for Teams meetings in MTR mode
 
 //State trackers to ensure we only trigger the modal when an active call actually ends
 let isMtrInCall = false;
@@ -43,7 +44,12 @@ xapi.Status.MicrosoftTeams.Calling.InCall.on(value => {
         // Call transitioned from True to False (Meeting Ended)
         isMtrInCall = false;
         console.log('MTR Meeting ended. Showing modal immediately.');
-        showCleanupReminder(); // Triggers instantly for MTR
+        //Removed OG code to accomodate for potential active share // showCleanupReminder(); // Triggers instantly for MTR
+      
+      // Triggers after a 6-second delay for MTR Teams Join
+        setTimeout(() => {
+            showCleanupReminder();
+        }, MTR_DELAY_MS);
     }
 });
 
@@ -58,7 +64,7 @@ xapi.Status.Call.Status.on((value) => {
         isNativeInCall = false;
         console.log(`Webex Meeting ended. Waiting ${WEBEX_DELAY_MS / 1000} seconds before showing modal.`);
         
-        // Triggers after a 1-second delay for Webex
+        // Triggers after a 3-second delay for Webex, VIMT/CVI and Zoom CRC/SIP
         setTimeout(() => {
             showCleanupReminder();
         }, WEBEX_DELAY_MS);
