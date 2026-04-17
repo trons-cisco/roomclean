@@ -22,3 +22,4 @@ In the Microsoft Teams Rooms experience on Cisco Devices
 |-----|------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------|
 | 1.0 | Initial release | Issue with Desk device displaying the webview as it was returning to an active content share |
 | 1.1 | Delay Enhancement | Added in a delay to accomodate for returning to active content upon meeting disconnect, this version addes delay for WebexNative only, will test on MTR or add checks for "device type" |
+| x.x | Upcoming patch | Need to add in content check, if active then Delay 1 second for both RoomOS and MTR |
