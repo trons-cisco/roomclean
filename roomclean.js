@@ -43,10 +43,9 @@ xapi.Status.MicrosoftTeams.Calling.InCall.on(value => {
     } else if (value === 'False' && isMtrInCall) {
         // Call transitioned from True to False (Meeting Ended)
         isMtrInCall = false;
-        console.log('MTR Meeting ended. Showing modal immediately.');
-        //Removed OG code to accomodate for potential active share // showCleanupReminder(); // Triggers instantly for MTR
+        console.log(`MTR Teams Meeting ended. Waiting ${MTR_DELAY_MS / 1000} seconds before showing modal.`);
       
-      // Triggers after a 6-second delay for MTR Teams Join
+      // Triggers after a 6 second delay for Teams meetings in MTR mode
         setTimeout(() => {
             showCleanupReminder();
         }, MTR_DELAY_MS);
@@ -64,7 +63,7 @@ xapi.Status.Call.Status.on((value) => {
         isNativeInCall = false;
         console.log(`Webex Meeting ended. Waiting ${WEBEX_DELAY_MS / 1000} seconds before showing modal.`);
         
-        // Triggers after a 3-second delay for Webex, VIMT/CVI and Zoom CRC/SIP
+        // Triggers after a 3 second delay for Webex, VIMT/CVI and Zoom CRC/SIP
         setTimeout(() => {
             showCleanupReminder();
         }, WEBEX_DELAY_MS);
